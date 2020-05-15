@@ -47,8 +47,4 @@ Thumbs.db
 
 dist.zip
 
-src/environments/environment.prod.ts
-
-src/environments/environment.ts
-
 dist.rar
