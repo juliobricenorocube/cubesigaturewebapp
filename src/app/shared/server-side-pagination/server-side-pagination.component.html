@@ -1,0 +1,38 @@
+<!-- <nav aria-label="Page navigation example">
+  <ul class="pagination pagination-circle pg-blue" style="width: 100%;">
+    <li [ngClass]="{'disabled': blockPage == 1}" class="page-item" (click)="goFirstLastPage(1)"><a class="page-link"
+        mdbWavesEffect>First</a></li>
+    <li [ngClass]="{'disabled': blockPage == 1}" class="page-item" (click)="getArrayOfPage2(1);">
+      <a class="page-link" aria-label="Previous" mdbWavesEffect>
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li (click)="onClickPage(item, $event)" [ngClass]="{'active': activePage === item}" *ngFor="let item of showPages"
+      class="page-item"><a class="page-link" mdbWavesEffect>{{item}}</a></li>
+    <li [ngClass]="{'disabled': blockPage == getCountBlockPage()}" class="page-item" (click)="getArrayOfPage2(2);">
+      <a class="page-link" aria-label="Next" mdbWavesEffect>
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    <li [ngClass]="{'disabled': blockPage == getCountBlockPage()}" (click)="goFirstLastPage(2)" class="page-item"><a
+        class="page-link" mdbWavesEffect>Last</a></li>
+  </ul>
+</nav> -->
+
+
+<nav>
+  <ul class="pagination pagination-circle pg-blue d-flex flex-center justify-content-end"
+    ng-reflect-klass="pagination pagination-circle p">
+    <li class="ng-star-inserted"> {{startBlock}} - {{endBlock}} of {{getPageCount()}} </li>
+    <li [ngClass]="{'disabled': blockPage == 1}" class="page-item" (click)="goFirstLastPage(1)" ><a
+        aria-label="Previous" class="page-link" mdbwaveseffect=""><span aria-hidden="true">«</span></a></li>
+    <li [ngClass]="{'disabled': blockPage == 1}" class="page-item" (click)="getArrayOfPage2(1);" ><a
+        aria-label="Previous" class="page-link" mdbwaveseffect=""><span aria-hidden="true">‹</span></a></li>
+    <li [ngClass]="{'disabled': blockPage == getCountBlockPage()}" class="page-item" (click)="getArrayOfPage2(2);" ><a
+        aria-label="Previous" class="page-link" mdbwaveseffect=""><span aria-hidden="true">›</span></a></li>
+    <li [ngClass]="{'disabled': blockPage == getCountBlockPage()}" (click)="goFirstLastPage(2)" class="page-item" ><a
+        aria-label="Next" class="page-link" mdbwaveseffect=""><span aria-hidden="true">»</span></a></li>
+  </ul>
+</nav>

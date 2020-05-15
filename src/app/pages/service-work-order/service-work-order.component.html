@@ -1,0 +1,21 @@
+<div class="bg-body">
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center px-2" style="margin-right:-15px !important">
+      <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5  form-container login-container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Material input text -->
+              <div class="md-form" style="margin-bottom:1.5rem !important;">
+                <input type="text" [(ngModel)]="code" id="aaa"  class="form-control" mdbInput>
+                <label for="aaa" class="font-weight-light">Verification Code</label>
+              </div>
+            </div>
+            <div class="col-md-12 mt-2 float-right">
+              <button (click)="validateCode()" class="btn btn-green1 btn-block" style="font-size: 1rem !important;" aria-pressed="true">
+                <i class="fas fa-check"></i> Enter</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

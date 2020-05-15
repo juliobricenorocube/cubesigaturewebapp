@@ -1,0 +1,25 @@
+<!-- Start your project here-->
+<!-- <mdb-spinner spinnerType="big" spinnerColor="blue"></mdb-spinner> -->
+
+
+<div class="d-flex justify-content-center loader-background" *ngIf="loadingService.isLoading | async">
+  <!-- <div class="loader"></div> -->
+  <div class="loader">
+    <mdb-spinner spinnerType="big" spinnerColor="blue"></mdb-spinner>
+    <h4>Loading</h4>
+  </div>
+</div>
+
+
+<app-navbar-sidebar>
+</app-navbar-sidebar>
+<div class="row">
+  <div style="margin-top: 45px;" class="col-12">
+    <!-- <p>
+
+      {{'12345'|currency:"VEF":"symbol"}}
+    </p> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!-- /end your project here-->

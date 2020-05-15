@@ -1,0 +1,242 @@
+<!-- Top menu -->
+<mdb-navbar *ngIf='isSideBarVisible' SideClass="navbar navbar-conta movil fixed-top navbar-expand-lg navbar-dark" [containerInside]="false" [iconBackground]="'grey'">
+  <!-- Navbar brand -->
+  <div class="mx-auto d-block"><a href="#"><img src="../assets/cube-logo.png" class="img-responsive center-block text-center img-logo" alt="CUBE-logo" width="80" height="30"  /></a></div>
+  <div class="icon-toogle"><a href="#" class="mobile-sidebar" data-target="#sidebar" (click)="toggleSide()"  data-toggle="collapse" style="color:#95c83d;"><mdb-icon fas icon="toggle-on"></mdb-icon></a></div>
+  <!-- Collapsible content -->
+  <links>
+    <!-- Top Links Menu -->
+    <ul class="navbar-nav ml-auto top-nav icon-header">
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!-- lateral menu -->
+<div *ngIf='isSideBarVisible'>
+  <div class="row d-flex d-md-block flex-nowrap wrapper"   >
+    <div class="col-md-1 float-left col-1 pl-0 pr-0 collapse " id="sidebar" style="background-color:white" >
+      <div>
+        <div class="list-group border-0 card text-center text-md-left" style="margin-top:2.7rem">
+
+          <!-- <a href="#menu2" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><mdb-icon far icon="window-maximize"></mdb-icon><span class="d-none d-md-inline">Windows Opened</span></a>
+          <div class="collapse" id="menu2" data-parent="#sidebar">
+            <a class="list-group-item">Eng Projects <div class="pull-right"><i class="fa fa-star"></i><mdb-icon fas icon="times"></mdb-icon></div></a>
+            <a class="list-group-item">Dashboard <div class="pull-right"><i class="fa fa-star"></i><mdb-icon fas icon="times"></mdb-icon></div></a>
+            <a class="list-group-item">Issues <div class="pull-right"><i class="fa fa-star"></i><mdb-icon fas icon="times"></mdb-icon></div></a>
+          </div> -->
+
+          <!--start menu-->
+
+          <!-- <div *ngFor="let item of message" >
+            <a href="{{ '#AB' + item.id }}" class="list-group-item d-inline-block collapsed c-menu__item__inner text-center" data-toggle="collapse" aria-expanded="true"><mdb-icon far icon="window-maximize">
+
+            </mdb-icon>
+            <span class="d-block d-sm-block d-md-none name-side">{{ item.moduleName }}</span>
+            </a>
+            <div [ngClass]="{'show': message[0].userModules.length > 0}" class="collapse" id="{{ 'AB' + item.id }}" data-parent="#sidebar">
+              <a style="font-size: .80rem !important;padding-left:0.5rem !important;padding-right:0.5rem !important" (click)="callModule(item2)" *ngFor="let item2 of item.userModules" class="list-group-item">{{ item2.moduleName }}
+                <div class="pull-right">
+                  <mdb-icon (click)="deleteModule(item2)" fas icon="times"></mdb-icon>
+                </div>
+              </a>
+            </div>
+          </div>
+ -->
+<!--
+          <div *ngFor="let item of userNemu.userMenuNodes" >
+            <a style="font-size: 1.125rem !important;" href="{{ '#AA' + item.id }}" mdbTooltip="{{item.moduleName}}" placement="bottom" class="list-group-item d-inline-block collapsed c-menu__item__inner text-center" data-toggle="collapse" aria-expanded="false"><i class="{{ item.fontAweson }}"></i>
+              <div class="name-side d-block d-sm-block d-md-none">{{ item.moduleName }}</div>
+            </a>
+            <div class="collapse" id="{{ 'AA' + item.id }}" data-parent="#sidebar">
+              <a (click)="callModule(item2)" *ngFor="let item2 of item.userModules" mdbTooltip="{{item2.moduleName}}" class="list-group-item text-center"><div class="text-center"><i class="{{ item2.fontAweson }}"></i></div><div class="name-side">{{ item2.moduleName }}</div> </a>
+            </div>
+          </div> -->
+
+          <!--fin menu-->
+        </div>
+       </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<!-- Start Modal Support -->
+<div mdbModal #mTechSupport="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="mTechSupport.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h5 class="modal-title w-100" id="myModalLabel">Technicial Support Ticket</h5>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-container1">
+          <div class="form-row">
+            <div class="col-md-12 col-xs-12">
+              <div class="md-form">
+                <input mdbInput type="text" id="form12" class="form-control">
+                <label for="form1">Subject</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="md-form">
+                <!-- <mdb-select ></mdb-select> -->
+                <label for="form1">Type</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="md-form">
+                <textarea type="text" id="form10" class="md-textarea form-control" mdbInput></textarea>
+                <label for="form7">Problem Description</label>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="md-form">
+                <mdb-file-upload  data-height="130" ></mdb-file-upload>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="link" class="waves-light btn-sm" aria-label="Close" mdbWavesEffect>Cancel</button>
+        <button type="button" mdbBtn class="relative btn-green1 waves-light btn-sm" mdbWavesEffect><i class="fas fa-check"></i> Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Support -->
+<!--Modal settings user-->
+<div mdbModal #msettingsUser="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="msettingsUser.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h5 class="modal-title w-100" id="myModalLabel">Settings</h5>
+      </div>
+      <div class="modal-body">
+        <div>
+          <mdb-tabset [buttonClass]="'classic-tabs'"  class="classic-tabs" style="margin:0 -55px !important">
+              <!--Panel 1-->
+              <mdb-tab heading="Global Preferences" class="tab-size">
+                <div class="form-container1">
+                  <div class="mt-3 col-md-12" style="color: #333!important;font-weight:600 !important;font-size:1rem;margin-left:-14px"><span>Local Information</span></div>
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                      <div class="md-form">
+                         <mdb-select [(ngModel)]="userSettings.LanguageID" [filterEnabled]="true" [options]="languageSelect" placeholder="" filterPlaceholder="select language" 	[notFoundMsg]="'Language not found'"></mdb-select>
+                         <label for="language">Language</label>
+                       </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                      <div class="md-form">
+                         <mdb-select [(ngModel)]="userSettings.CurrencyFormatID" [filterEnabled]="true" [options]="currencySelect" placeholder="" filterPlaceholder="select currency" 	[notFoundMsg]="'Currency not found'"></mdb-select>
+                         <label for="currency">Currency</label>
+                       </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                      <div class="md-form">
+                         <mdb-select [(ngModel)]="userSettings.dateFormateID" [filterEnabled]="true" [options]="dateformSelect" placeholder="" filterPlaceholder="select date format" 	[notFoundMsg]="'Date Format not found'"></mdb-select>
+                         <label for="dformat">Date Format</label>
+                       </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                      <div class="md-form">
+                         <mdb-select [(ngModel)]="userSettings.NumberFormatID" [filterEnabled]="true" [options]="timeformSelect" placeholder="" filterPlaceholder="select project" 	[notFoundMsg]="'Project not found'"></mdb-select>
+                         <label for="tformat">Time Format</label>
+                       </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                      <div class="md-form">
+                         <mdb-select [(ngModel)]="userSettings.TimeZoneID" [filterEnabled]="true" [options]="timezoneSelect" placeholder="" filterPlaceholder="select project" 	[notFoundMsg]="'Project not found'"></mdb-select>
+                         <label for="tzone">Time Zone</label>
+                       </div>
+                    </div>
+
+                  </div>
+                </div>
+              </mdb-tab>
+              <!--Panel 2-->
+              <mdb-tab heading="Other Settings"  class="tab-size">
+                <form class="form-container1">
+                  <div class="mt-2 col-md-12" style="color: #333!important;font-weight:600 !important;font-size:1rem;margin-left:-14px"><span>On startup</span></div>
+                  <div class="form-row">
+                    <div class="col-md-12 col-xs-12">
+                      <div class="md-form">
+                         <mdb-select [filterEnabled]="true" [options]="startpageSelect" placeholder="" filterPlaceholder="select project" 	[notFoundMsg]="'Project not found'"></mdb-select>
+                         <label for="language">Start Page</label>
+                       </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                      <div class="md-form">
+                         <mdb-select [filterEnabled]="true" [options]="sesiontimeSelect" placeholder="" filterPlaceholder="select project" 	[notFoundMsg]="'Project not found'"></mdb-select>
+                         <label for="currency">Sesion Timeout</label>
+                       </div>
+                    </div>
+                  </div>
+                </form>
+
+              </mdb-tab>
+
+
+
+            </mdb-tabset>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="link" class="waves-light btn-sm" aria-label="Close" mdbWavesEffect>Cancel</button>
+        <button type="button" [disabled]="savingUserSetting" (click)="saveUserSettings()" mdbBtn class="relative btn-green1 waves-light btn-sm" mdbWavesEffect><i class="fas fa-check"></i> Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Change Password Modal-->
+<div mdbModal #mChangePasswd="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="mChangePasswd.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h5 class="modal-title w-100" id="myModalLabel">Change Password</h5>
+      </div>
+      <div class="modal-body">
+        <form class="form-container1">
+          <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+              <div class="col-md-12 col-xs-12 col-sm-12">
+                <div class="md-form">
+                  <input mdbInput type="password" id="form15" class="form-control">
+                  <label for="form1">Current Password</label>
+                </div>
+              </div>
+              <div class="col-md-12 col-xs-12">
+                <div class="md-form">
+                  <input mdbInput type="password" id="form13" class="form-control">
+                  <label for="form1">New Password</label>
+                </div>
+              </div>
+              <div class="col-md-12 col-xs-12">
+                <div class="md-form">
+                  <input mdbInput type="password" id="form17" class="form-control">
+                  <label for="form1">Confirm New Password</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="link" class="waves-light btn-sm" aria-label="Close" mdbWavesEffect>Cancel</button>
+        <button type="button" mdbBtn class="relative btn-green1 waves-light btn-sm" mdbWavesEffect><i class="fas fa-check"></i> Change Password</button>
+      </div>
+    </div>
+  </div>
+</div>

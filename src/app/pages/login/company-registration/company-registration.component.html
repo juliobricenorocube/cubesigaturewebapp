@@ -1,0 +1,271 @@
+<div class="bg-body">
+  <div class="container">
+    <div class="row justify-content-center align-items-center px-2" style="margin-right:-15px !important">
+      <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 form-container login-container">
+        <div class="logo text-center">
+           <a href="#"><img src="../assets/cube-logo.png" alt="CUBE-logo" width="30%"></a>
+         </div>
+         <br>
+        <!-- new account -->
+        <div class="row">
+          <div class="col-md-12">
+            <div  class="title-sing"><h4>Register Company</h4></div>
+            <h6 class="mb-3 subtitle">Fill to form with company information and select plan.</h6>
+          </div>
+        </div>
+
+        <form class="form-container1"  [formGroup]="cardForm1">
+          <div class="row mt-0">
+            <div class="col-md-12 mt-2" style="color: #333!important;font-weight:600 !important;font-size:0.9rem;"><span>Company Information</span></div>
+            <div class="col-md-12 col-xs-12">
+              <div class="row">
+                <div class="col-md-6 col-xs-12">
+                  <!-- Material input Email -->
+                  <div class="md-form">
+                    <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                    <input type="text" id="FirstName" formControlName="firtsname" class="form-control" mdbInput>
+                    <label for="FirstName" class="font-weight-light">Firts name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                  <!-- Material input Email -->
+                  <div class="md-form">
+                    <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                    <input type="text" id="LastName" formControlName="lastname" class="form-control" mdbInput>
+                    <label for="LastName" class="font-weight-light">Last name</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <!-- Material input Email -->
+              <div class="md-form">
+                <mdb-icon far icon="building" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="orgaName" formControlName="organame" class="form-control" mdbInput>
+                <label for="orgaName" class="font-weight-light">Organization name</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <!-- Material input Email -->
+              <div class="md-form">
+                <mdb-icon fas icon="phone" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="phoneNumber" formControlName="pnum" class="form-control" mdbInput>
+                <label for="phoneNumber" class="font-weight-light">Phone number</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="md-form">
+                <mdb-select [options]="Torganizacion"></mdb-select>
+                <label for="Torganizacion">Organization Type</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="mt-3" style="color: #333!important;font-weight:600 !important;font-size:0.9rem;"><span>Plan Information</span></div>
+            </div>
+            <div class="col-md-12 col-xs-12 mt-3">
+              <label class="mb-1" style="color: #757575 !important;font-weight:400;font-size:0.9rem;">Select Plans</label>
+              <div class="row">
+                <div class="col-md-6"><mdb-checkbox [checked]="true">Enterprise (65x User)</mdb-checkbox></div>
+                <div class="col-md-6"><mdb-checkbox [checked]="false">Standard </mdb-checkbox></div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+              <div class="md-form">
+                <mdb-select [options]="nuser"></mdb-select>
+                <label for="Torganizacion">Number of Users</label>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-1">
+              <!--Card-->
+              <div class="card z-depth-1">
+                <!--Content-->
+                <div class="text-center">
+                  <div class="card-body">
+                    <h6>Monthly</h6>
+                    <!--Price-->
+                    <h6 class="my-2">
+                      <sup>$</sup><strong>325.00</strong>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <!--Card-->
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-1">
+              <!--Card-->
+              <div class="card light-blue darken-3">
+                <!--Content-->
+                <div class="text-center white-text">
+                  <div class="card-body">
+                    <h6>Year</h6>
+                    <!--Price-->
+                    <h6 class="my-2">
+                      <sup>$</sup><strong>4680.00</strong>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <!--Card-->
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-1">
+              <!--Card-->
+              <div class="card z-depth-1">
+                <!--Content-->
+                <div class="text-center">
+                  <div class="card-body">
+                    <h6>Pay now</h6>
+                    <!--Price-->
+                    <h6 class="my-2">
+                      <sup>$</sup><strong>2340.00</strong>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <!--Card-->
+            </div>
+            <!--Grid column-->
+            <div class="col-md-12 mt-4">
+              <p style="color: #757575 !important;font-weight:400;font-size:0.9rem;">By clicking below, you agree to CUBE <a href="#"  data-toggle="modal" data-target="#basicExample" (click)="modalTerms.show()">Terms of Service.</a></p>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="mt-0" ><a routerLink="/Payment" class="btn btn-green1 btn-block" (click)="showSuccess()" mdbWavesEffect>Agree and Continue</a></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- terms and conditional modal -->
+  <div mdbModal #modalTerms="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalTerms.hide()">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h5 class="modal-title w-100" id="myModalLabel">CUBE Terms and Conditions</h5>
+        </div>
+        <div class="modal-body">
+          <h5 class="text-center">LEGAL NOTICE END USER LICENSE AGREEMENT</h5>
+          <p>
+            This End User License Agreement (the “Agreement”) is entered by and between CUBE USA, LLC. (“CUBE”) and you or your company (“User”).  The Agreement sets out the terms and conditions under which CUBE makes its software, services and products available (the “Software”).  For purposes of these Agreements, the term “User” means any person or entity using Software for any purpose whatsoever in any manner whatsoever. By accessing the Software, the User agrees to all the terms and conditions set forth in the Agreement.  If the User is acting on behalf of a corporate entity or institution, acceptance of the Agreement by the User constitutes acceptance by the corporate entity or institution and the User warrants that he or she has the corporate authority to enter into the Agreement on behalf of the corporate entity or institution, and its employees and affiliates.  User hereby acknowledges and agrees that CUBE reserves the right to change the terms and conditions of the Agreement, the products, services, prices and programs at any time, at its sole discretion and without notice. CUBE reserves the right to seek all remedies available to it, by law and in equity, for any violation of the terms and conditions contained herein.  All rights not expressly granted herein are herein reserved.
+          </p>
+          <h6>1. Copyright Notice</h6>
+          <p>
+          All information and materials appearing on the Software system, including without limitation any and all text, layout, functionality, toolsets, design features, and menus are protected by U.S. and International copyright laws. Ownership of said information and materials (“the CUBE Copyrighted Information”) lies exclusively with CUBE and its business affiliates, and except as specifically permitted, no portion of this system or the CUBE Copyrighted Information may be distributed or reproduced by any means, or in any form, without CUBE’s prior written permission.
+          <br><br>
+          User acknowledges that, aside from CUBE’s copyrighted material, the data, content and/or information contained in the Software may be subject to copyright protection by third parties (the “Third Party Copyrighted Information”).  User shall be directly liable to the holder of the Third Party Copyright, and if User(s) are in violation of any applicable U.S. or international copyright law, User shall defend, cover, hold harmless and indemnify CUBE, its officers, directors, employees, agents and subcontractors from and against any claim, demand, expense, loss, or cause of action of or to third parties, including reasonable attorney’s fees and costs, arising out of or relating to such conduct. User shall also defend, cover, hold harmless and indemnify CUBE from and against any claim, demand, expense, loss or action of or to third parties, including reasonable attorney’s fees and costs, in the event that User fails to honor any other intellectual property rights owned by third parties.
+          </p>
+          <h6>2.License to Use</h6>
+          <p>Subject to compliance with all of the terms and conditions of this Agreement, CUBE grants to User a single, renewable, non-exclusive, non-transferrable revocable license to access, view, and use the Software system, including but not limited to access to the various data, files and information of a User’s account, or other Software functions a certain User is authorized to 2
+          access, subject to the following terms and conditions:
+
+        </p>
+        <ul>
+          <ol type="a">
+            <li>Access codes, including user names and passwords, are for the benefit of the original recipient of the access codes, shall be kept strictly confidential, and shall not be disclosed to anyone without the express prior written consent of CUBE, except as expressly provided herein.</li>
+            <li>CUBE shall not be liable for the quality, soundness, accuracy or viability of any information appearing on the Software.  User is solely responsible for all acts or omissions in connection information residing on the User’s account.</li>
+            <li>CUBE reserves the exclusive right to terminate, suspend or otherwise revoke the User’s license in the event of non-payment, incomplete or partial payment or other violation of the Pricing terms set forth in Section 5, below.  CUBE’s exercise of a right to terminate, suspend or otherwise revoke the User’s license is wholly within CUBE’s discretion.</li>
+          </ol>
+        </ul>
+        <h6>3. Warranties and Disclaimers; Liability Limitations</h6>
+        <p>EXCEPT AS EXPRESSLY PROVIDED OTHERWISE IN AN AGREEMENT BETWEEN USER AND CUBE, ALL INFORMATION, OPERABILITY AND USABILITY ON THE SOFTWARE ARE PROVIDED "AS IS" WITHOUT WARRANTY OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+        <br><br>
+
+  CUBE WILL USE ITS COMMERCIALLY REASONABLE EFFORTS TO PROTECT THE PRIVACY AND INTEGRITY OF THE INFORMATION, AND TO PROTECT AGAINST THEFT, UNAUTHORIZED REPRODUCTION OR LOSS OF ANY INFORMATION; HOWEVER, USERS ACKNOWLEDGE AND AGREE THAT CUBE CANNOT GIVE ANY WARRANTIES IN THIS RESPECT.
+  <br><br>
+  CUBE ASSUMES NO RESPONSIBILITY (1) FOR ERRORS OR OMISSIONS IN THE INFORMATION OR COMPUTER CODE OR (2) FOR INTERRUPTIONS IN SERVICE.
+  <br><br>
+  IN NO EVENT SHALL CUBE, ITS OFFICERS, DIRECTORS, MEMBERS, EMPLOYEES OR AGENTS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER, INCLUDING WITHOUT LIMITATION, THOSE RESULTING FROM: (1) RELIANCE ON THE OPERATIONAL AVAILABILITY OF THE SOFTWARE, (2) COSTS OF REPLACEMENT GOODS, (3) THEFT OF DATA OR LOSS OF USE, DATA, OR PROFITS, (4) DELAYS OR BUSINESS INTERRUPTIONS, AND (5) ANY THEORY OF LIABILITY, ARISING OUT OF, RELATING TO OR IN CONNECTION WITH THE USE OF ACCOUNTS AND DATA OR INFORMATION OR THE PERFORMANCE OF THE SOFTWARE, WHETHER OR NOT CUBE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+  SOME JURISDICTIONS DO NOT ALLOW SOME OF THE EXCLUSIONS,
+
+  LIMITATIONS AND DISCLAIMERS AS SET FORTH ABOVE.  HOWEVER, IN SUCH EVENT, SUCH EXCLUSIONS, LIMITATIONS AND DISCLAIMERS SHALL BE VALID AND ENFORCEABLE TO THE FULLEST EXTENT ALLOWED BY LAW.
+
+  CUBE’S TOTAL CUMULATIVE LIABILITY TO THE USER, FOR ANY REASON, SHALL BE LIMITED SOLELY TO THE LICENSE AMOUNT PERTAINING TO THE PARTICULAR USER IN QUESTION.
+
+  </p>
+
+  <h6>4. Availability</h6>
+  <p>
+  CUBE will make commercially reasonable efforts to make sure that the Software system is operational and running 24 hours a day, 7 days a week. However, User acknowledges that availability may sometimes be interrupted by: weather events (acts of God), hardware and software problems (whether internal to CUBE or third party providers), and software and hardware upgrades, installations and maintenance, as well as many other unforeseen possibilities. CUBE will make commercially reasonable efforts to keep the Software system up and running and in the event that the Software system is not operational in whole or in part, CUBE will make commercially reasonable efforts to restore full operation of the system promptly.  USER, HOWEVER, ACKNOWLEDGES THAT IN NO EVENT SHALL CUBE BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, RESULTING FROM THE LAURIS ONLINE WEBSITE BEING UNACCESSIBLE FOR ANY AMOUNT OF TIME FOR ANY REASON.
+
+  </p>
+
+  <h6>5. Pricing</h6>
+  <p>
+  User agrees that the single (i.e., per seat) renewable license specified in Section 2, above, and under which User is operating the Software system, has a duration coterminous with the User’s subscription period.
+  <br><br>
+
+  User agrees that use of the Software system and the grant of the license specified in Section 2, above, is subject to the payment of any applicable licensing fees and costs.  CUBE reserves the right to immediately and without notice cancel this Agreement, as well as restrict or terminate access to the Software system in the event registration fee payments remain outstanding.  Similarly, in the event the license described in Section 2, above, is not renewed, CUBE reserves the right to terminate this Agreement, as well as restrict or terminate access to the Software system as of the date of the license’s expiration.  In the event access to the Software system is restricted for non-payment or non-renewal, User agrees to hold harmless and release CUBE from and against any and all claims, damages, costs, fees, expenses, loss of business or business interruption suffered by User as a result of the restriction of access.
+  <br><br>
+  Pricing is subject to change without notice; and CUBE reserves the right to adjust or modify any pricing, at anytime after the pricing change is made.  The full invoice amount is due prior to a user’s first use of the system, unless otherwise expressly indicated in a separate signed writing by CUBE.  If User defaults in any payment when due, then the whole invoice amount shall immediately become due and payable upon demand, or CUBE, at its option without prejudice to other lawful remedies, may defer delivery or cancel this contract.  Should User decide to terminate this Agreement prior to the expiration of the Agreement’s term, CUBE may, but is not
+   <br><br>
+  obligated to, return a part of the invoiced amount.  User shall reimburse CUBE, upon demand, for any costs of collection incurred by CUBE, including reasonable attorneys’ fees.
+
+  </p>
+
+  <h6>6. Monitoring</h6>
+  <p>
+  Users acknowledges that CUBE may review or monitor utilization of the Software system and that such review or monitoring is to be carried out at CUBE’s sole discretion.  User further acknowledges that the Software may, at its sole discretion, suspend, terminate or otherwise restrict User’s access to the Software system if, at CUBE’s sole discretion, it is determined that inappropriate account activity is or has taken place. <strong> IF USER RESTRICTIONS ARE PUT IN PLACE BY CUBE RELATED TO INAPPROPRIATE ACCOUNT ACTIVITY, USER AGREES CUBE WILL HAVE NO LIABILITY RELATED TO THE SYSTEM’S UNAVAILIABILITY.</strong>
+  </p>
+  <h6>7. Restrictions on Use</h6>
+
+  <p>
+  In connection with access or use of the Software system, User agrees not to:
+  </p>
+  <ol type="a">
+    <li>modify, port, adapt, translate, reverse engineer, decompile, disassemble the Software system or any of the source codes of the Software system, or attempt to discover any of such source codes;</li>
+    <li>introduce a virus, worm, Trojan horse or other harmful software code or similar files that may damage the operation of an CUBE computer, property or information; </li>
+    <li>use the Software system in any manner that could damage, disable, overburden, or impair any CUBE server, or the network(s) connected to any server or interfere with any other party’s use and enjoyment of the Software system;</li>
+    <li>attempt to gain unauthorized access to service, materials, other accounts, computer systems or networks connected to any CUBE server or to the Software system, through hacking, password mining, or any other means; </li>
+    <li>obtain or attempt to obtain any materials or information through any means not intentionally made available through the Software system;</li>
+    <li>host, on a subscription basis or otherwise, the Software system, including any related application;</li>
+    <li>engage in any systematic extraction of data or data fields; </li>
+    <li>sell, lease, or rent access to or use of the Software system, or otherwise transfer any rights to use the Software system;</li>
+    <li>upload, or otherwise make available on the Software system, files or data that are protected by intellectual property laws, including, for example, and not as limitation, copyright or trademark laws, unless User owns or controls the rights thereto or have received all necessary consent to do the same.</li>
+  </ol>
+  <h6>8. Data Privacy</h6>
+  <p>
+  You agree that CUBE may process technical and related information about User which may include internet protocol address, hardware identification, operating system, peripheral hardware, and non-personally identifiable usage statistics to facilitate the provisioning of updates, support, invoicing or online services. To the extent that this information constitutes
+
+  personal data, CUBE shall be the controller of such personal data.
+
+  <h6>9. Confidential Information and Protection Thereof</h6>
+  <p>
+  The following information shall be considered Confidential Information, whether or not marked or identified as such: (a) information regarding CUBE pricing, product roadmaps or strategic marketing plans; and (b) non-public materials relating to the User or the Software.
+
+  CUBE may use Confidential Information (a) to exercise its rights and perform its obligations under this EULA; or (b) in connection with the parties’ ongoing business relationship. CUBE will not use any Confidential Information of Discloser for any purpose not expressly permitted by this EULA, and will disclose the Confidential Information of Discloser only to the employees or contractors of CUBE who have a need to know such Confidential Information for purposes of this EULA and who are under a duty of confidentiality no less restrictive than CUBE duty hereunder. Recipient will protect Confidential Information from unauthorized use, access, or disclosure in the same manner as CUBE protects its own confidential or proprietary information of a similar nature but with no less than reasonable care.
+
+  CUBE’s obligations under Section 9 with respect to any Confidential Information will terminate if CUBE can show by written records that such information: (a) was already known to CUBE at the time of disclosure by User; (b) was disclosed to CUBE by a third party who had the right to make such disclosure without any confidentiality restrictions; (c) is, or through no fault of CUBE has become, generally available to the public; or (d) was independently developed by CUBE without access to, or use of, User’s Information. In addition, Recipient will be allowed to disclose Confidential Information to the extent that such disclosure is required by law or by the order of a court of similar judicial or administrative body, provided that CUBE notifies User of such required disclosure promptly and in writing and cooperates with User, at User’s request and expense, in any lawful action to contest or limit the scope of such required disclosure.
+  </p>
+
+  <h6>10. Governing Law, Venue and Jurisdiction</h6>
+  <p>
+
+  In the event of any dispute, claim, question, or disagreement arising from or relating to this agreement or the breach thereof, the parties hereto shall use their best efforts to settle the dispute, claim, question, or disagreement. To this effect, they shall consult and negotiate with each other in good faith and, recognizing their mutual interests, attempt to reach a just and equitable solution satisfactory to both parties. If they do not reach such solution within a period of 60 days, then, upon notice by either party to the other, all disputes, claims, questions, or differences shall be finally settled by arbitration administered by the American Arbitration Association in accordance with the provisions of its Commercial Arbitration Rules. The place of arbitration shall be Miami, Florida.
+  <br><br>
+
+  Consistent with the expedited nature of arbitration, each party will, upon the written request of the other party, promptly provide the other with copies of documents relevant to the issues raised by any claim or counterclaim on which the producing party may rely in support of or in opposition to any claim or defense. Any dispute regarding discovery, or the relevance or scope thereof, shall be determined by the arbitrator, which determination shall be conclusive. All discovery shall be completed within 45 days following the appointment of the arbitrator.
+   <br><br>
+
+  The arbitrator shall award to the prevailing party, if any, as determined by the arbitrator, all of its costs and fees. “Costs and fees” mean all reasonable pre-award expenses of the arbitration, including the arbitrators’ fees, administrative fees, travel expenses, out-of-pocket expenses such as copying and telephone, court costs, witness fees, and attorneys’ fees. The arbitrator has no authority to award punitive or other damages not measured by the prevailing party’s actual damages, except as may be required by statute. Any award issued by the arbitrator shall include findings of fact and conclusions of law.
+  <br><br>
+  This agreement shall be governed by and interpreted in accordance with the laws of the State of Florida. The parties acknowledge that this agreement evidences a transaction involving interstate commerce. The United States Arbitration Act shall govern the interpretation, enforcement, and proceedings pursuant to the arbitration clause in this agreement.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="link" class="waves-light btn-md" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Decline</button>
+          <button type="button" mdbBtn class="relative btn-green1 waves-light btn-sm" mdbWavesEffect><i class="fas fa-check"></i> Accept</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

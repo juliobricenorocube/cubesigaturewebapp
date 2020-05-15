@@ -1,0 +1,117 @@
+<mdb-accordion [multiple]="false">
+  <mdb-accordion-item [collapsed]="collapseFilters" (click)="collapseFilters = !collapseFilters" [customClass]="'z-depth-1'" class="text-accordion">
+    <!-- <mdb-accordion-item-head  [customClass]="'grey lighten-4 border-0'" class="header-card" ><i class="fas fa-filter" style="font-size:0.85rem;margin-top:-.35rem;margin-right:3%"></i><h3> Filters</h3></mdb-accordion-item-head> -->
+    <div class=" d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center"
+      style="background-color:#f5f5f5;">
+      <div><button  type="button" mdbBtn class=" waves-light btn btn-green1 btn-sm" (click)="onNew.emit()" mdbWavesEffect><i
+            class="fas fa-plus"></i> {{data.btnAddName}}</button></div>
+      <mdb-accordion-item-head [customClass]="'grey lighten-4 border-0'" class="header-card ml-auto" style="">
+        <div class="">
+          <h3><i class="fas fa-filter" style="font-size:0.85rem;margin-top:-.35rem;"></i> Filters</h3>
+        </div>
+      </mdb-accordion-item-head>
+    </div>
+    <mdb-accordion-item-body (animationStateChange)="onAnimationStateChange($event)">
+      <div class="mb-1 form-container1 form">
+        <div class="row">
+          <div *ngFor="let item of data.filterBody" class="col-md-{{item.filterSize}} col-xs-12 col-sm-12">
+            <div class="md-form">
+              <input (keydown.enter)="search()" *ngIf="item.filterType == filtersType.InputTypeText" mdbInput type="text"
+                [(ngModel)]="item.filterValue" class="form-control">
+              <input (keydown.enter)="search()" *ngIf="item.filterType == filtersType.InputTypeNumber" mdbInput type="number"
+                [(ngModel)]="item.filterValue" class="form-control">
+              <mdb-select *ngIf="item.filterType == filtersType.DropDown" [(ngModel)]="item.filterValue"
+                [appendToBody]="true" [multiple]="true" [filterEnabled]="true" [options]="item?.filterData"
+                placeholder=""></mdb-select>
+
+              <label for="form1">{{item.filterLabel}}</label>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3">
+            <button (click)="clearFilter()" type="button" class="btn btn-outline-gray1 btn-sm" data-toggle="tooltip" data-placement="top"
+              title="Clear filters"><i class="fas fa-times"></i></button>
+            <button style="font-size:0.75rem; text-transform:capitalize" (click)="search()" type="button" class="btn  btn-green1 btn-sm ml-1" data-toggle="tooltip"
+              data-placement="top" title="Search"><i class="fas fa-search"></i> Search</button>
+          </div>
+        </div>
+      </div>
+    </mdb-accordion-item-body>
+  </mdb-accordion-item>
+</mdb-accordion>
+<div class="row mb-4 mt-2" style="margin-right:-15px !important">
+  <div class="col-md-12">
+    <mdb-card>
+      <div class="table-responsive">
+        <div class="row" style="margin-right:0 !important; margin-bottom: -.70rem">
+          <div class="col-md-6">
+            <div class="header-table-title mt-1">
+              <i class="fas fa-list"></i>
+              <h3>Component List</h3>
+            </div> <!-- /widget-header -->
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div class="mt-1">
+              <nav>
+                <ul class="pagination pagination-circle pg-blue d-flex flex-center justify-content-end"
+                  ng-reflect-klass="pagination pagination-circle p">
+                  <li class="ng-star-inserted"> {{startBlock}} - {{endBlock}} of {{totalRecords}} </li>
+                  <li [ngClass]="{'disabled': activePage == 1}" class="page-item" (click)="goFirstLastPage(1)"><a
+                      aria-label="Previous" class="page-link" mdbwaveseffect=""><span aria-hidden="true">«</span></a>
+                  </li>
+                  <li [ngClass]="{'disabled': activePage == 1}" class="page-item" (click)="onClickPage(activePage - 1);"><a
+                      aria-label="Previous" class="page-link" mdbwaveseffect=""><span aria-hidden="true">‹</span></a>
+                  </li>
+                  <li [ngClass]="{'disabled': activePage == getPageCount()}" class="page-item"
+                    (click)="onClickPage(activePage + 1)"><a aria-label="Previous" class="page-link" mdbwaveseffect=""><span
+                        aria-hidden="true">›</span></a></li>
+                  <li [ngClass]="{'disabled': activePage == getPageCount()}" (click)="goFirstLastPage(2)"
+                    class="page-item"><a aria-label="Next" class="page-link" mdbwaveseffect=""><span
+                        aria-hidden="true">»</span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <table mdbTable #tableEl="mdbTable" stickyHeader="true" hover="true" class="rgMasterTable table table-hover">
+          <thead class="sticky-top">
+            <tr>
+              <th [ngClass]="data.tableHeaders[i].class" *ngFor="let head of data.tableHeaders; let i = index"
+                [sortBy]="data.tableHeaders[i].position" (click)="sortHead(head)" scope="col">{{head.head | titlecase}}
+                <mdb-icon fas icon="sort-up" *ngIf="headSelected == data.tableHeaders[i].position && headSelected >=0"></mdb-icon>
+                <mdb-icon fas icon="sort-down" *ngIf="headSelected == (data.tableHeaders[i].position * -1) && (headSelected < 0 || headSelected == -0)"></mdb-icon>
+                <!-- <mdb-icon fas icon="sort" *ngIf="headSelected !== data.tableHeaders[i].position"></mdb-icon> -->
+              </th>
+            </tr>
+          </thead>
+          <ng-content></ng-content>
+        </table>
+
+
+        <div class="col-md-12 col-xs-12 mt-1">
+          <div class="mt-1">
+            <nav>
+              <ul class="pagination pagination-circle pg-blue d-flex flex-center justify-content-end"
+                ng-reflect-klass="pagination pagination-circle p">
+                <li class="ng-star-inserted"> {{startBlock}} - {{endBlock}} of {{totalRecords}} </li>
+                <li [ngClass]="{'disabled': activePage == 1}" class="page-item" (click)="goFirstLastPage(1)"><a
+                    aria-label="Previous" class="page-link" mdbwaveseffect=""><span aria-hidden="true">«</span></a>
+                </li>
+                <li [ngClass]="{'disabled': activePage == 1}" class="page-item" (click)="onClickPage(activePage - 1);"><a
+                    aria-label="Previous" class="page-link" mdbwaveseffect=""><span aria-hidden="true">‹</span></a>
+                </li>
+                <li [ngClass]="{'disabled': activePage == getPageCount()}" class="page-item"
+                  (click)="onClickPage(activePage + 1)"><a aria-label="Previous" class="page-link" mdbwaveseffect=""><span
+                      aria-hidden="true">›</span></a></li>
+                <li [ngClass]="{'disabled': activePage == getPageCount()}" (click)="goFirstLastPage(2)"
+                  class="page-item"><a aria-label="Next" class="page-link" mdbwaveseffect=""><span
+                      aria-hidden="true">»</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+      </div>
+    </mdb-card>
+  </div>
+</div>

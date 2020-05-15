@@ -1,0 +1,5 @@
+{
+  "apiBaseUrl": "http://cube-mia.com/apicubeedge",
+  "dateFormat": "dd-MM-yyyy",
+  "moneyFormat": "USD $"
+}

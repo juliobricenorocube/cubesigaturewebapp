@@ -1,0 +1,135 @@
+<div class="bg-body">
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center px-2" style="margin-right:-15px !important">
+      <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5  form-container login-container">
+        <div class="logo text-center">
+           <a href="#"><img src="../assets/cube-logo.png" alt="CUBE-logo" width="30%"></a>
+         </div>
+         <br>
+        <!-- new account -->
+        <div style="color: #333!important;font-weight:700;font-family: 'Lato', sans-serif;"><h4>Create Account</h4></div>
+        <h6 class="" style="color:#838b93;font-family: 'Lato', sans-serif;font-size:0.9rem">Fill to form complet.</h6>
+        <form class="form-container1"  [formGroup]="cardForm">
+          <div class="form-row mt-0">
+            <div class="col-md-12 col-xs-12">
+              <!-- Material input Email -->
+              <div class="md-form">
+                <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="materialFormCardNameEx" formControlName="materialFormCardNameEx" class="form-control" mdbInput>
+                <label for="materialFormCardNameEx" class="font-weight-light">Email</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <!-- Material input password -->
+             <div class="md-form">
+               <mdb-icon fas icon="unlock-alt" class="prefix grey-text"></mdb-icon>
+               <input type="password" id="materialFormCardPasswordEx" formControlName="materialFormCardPasswordEx" class="form-control"
+                 mdbInput>
+               <label for="materialFormCardPasswordEx" class="font-weight-light">Password</label>
+               <!-- <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  At least 8 characters and 1 digit
+                </small> -->
+             </div>
+            </div>
+           <div class="col-md-12 col-xs-12">
+             <!-- Material input Confirm password -->
+            <div class="md-form">
+              <mdb-icon fas icon="unlock-alt" class="prefix grey-text"></mdb-icon>
+              <input type="password" id="materialFormCardPasswordEx1" formControlName="materialFormCardPasswordEx" class="form-control"
+                mdbInput>
+              <label for="materialFormCardPasswordEx1" class="font-weight-light">Confirm Password</label>
+            </div>
+           </div>
+          <!-- <div class="col-md-12 col-xs-12">
+           <div class="md-form">
+             <mdb-icon fas icon="question" class="prefix grey-text"></mdb-icon>
+             <input type="password" id="materialFormCardPasswordEx2" formControlName="materialFormCardPasswordEx" class="form-control"
+               mdbInput>
+             <label for="materialFormCardPasswordEx2" class="font-weight-light">Security Question</label>
+           </div>
+          </div> -->
+          <!-- <div class="col-md-12 col-xs-12">
+           <div class="md-form">
+             <mdb-icon fas icon="exclamation" class="prefix grey-text"></mdb-icon>
+             <input type="password" id="materialFormCardPasswordEx3" formControlName="materialFormCardPasswordEx" class="form-control"
+               mdbInput>
+             <label for="materialFormCardPasswordEx3" class="font-weight-light">Security Answer</label>
+           </div>
+          </div> -->
+          <div class="col-md-12 col-xs-12">
+            <!-- <div class="mt-4" ><a class="btn btn-green1 btn-block"  (click)="showSuccess()" mdbWavesEffect>Create User</a></div> -->
+            <div class="mt-4" ><button class="btn btn-green1 btn-block" (click)="mverification.show()"  mdbWavesEffect>Create User</button></div>
+            <div class="mt-3"><button routerLink="/login" type="submit" class="btn  btn-outline-gray btn-block">Have an account? Click here</button></div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- toast account create -->
+  <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <p class="heading lead">Account Created</p>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+            <p>Account Successfully Created.Your account has been created. Please click you can verify information has been emailed to example@gmail.com and follow instructions  to verify your account.</p>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" mdbBtn outline="true" class="waves-effect btn btn-green1" mdbWavesEffect (click)="frame.hide()">No, thanks</a>
+          <a type="button" mdbBtn class="waves-effect btn btn-grey1" mdbWavesEffect>Get it now
+            <i class="far fa-gem ml-1"></i>
+          </a>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!-- Message account verification -->
+  <div mdbModal #mverification="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <p class="heading lead">Account Verification</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="mverification.hide()">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="fas fa-check fa-4x mb-3 animated rotateIn" ></i>
+            <p>Your account has been verified and you can now log into the site.</p>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="link" class="waves-light btn-md" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Cancel</button>
+          <button type="button" routerLink="/CompanyRegistration" mdbBtn class="relative btn-green1 waves-light btn-sm" mdbWavesEffect><i class="fas fa-check"></i> Continue</button>
+        </div>
+
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+</div>

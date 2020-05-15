@@ -1,0 +1,129 @@
+<div class="bg-body">
+  <div class="container">
+    <div class="row justify-content-center align-items-center px-2" style="margin-right:-15px !important">
+      <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5  form-container login-container">
+        <div class="logo text-center">
+           <a><img src="../assets/cube-logo.png" alt="CUBE-logo" width="30%"></a>
+        </div>
+        <br>
+        <!-- new account -->
+        <div class="title-sing"><h4>Payment</h4></div>
+        <h6 class="mb-3 subtitle">Fill to form and proceed payment.</h6>
+        <form class="form-container1"  [formGroup]="cardForm">
+          <div style="color: #333!important;font-weight:600 !important;font-size:0.9rem;"><span>Credit card Information</span></div>
+          <div class="form-row">
+            <div class="col-md-6 col-xs-12">
+              <!-- Material input Email -->
+              <div class="md-form">
+                <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                <input type="text" formControlName="firtsname" class="form-control" mdbInput>
+                <label for="FirstName1" class="font-weight-light">First name on card</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <!-- Material input Email -->
+              <div class="md-form">
+                <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="LastNameq" formControlName="lastname" class="form-control" mdbInput>
+                <label for="LastName" class="font-weight-light">Last name on card</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <!-- Material input Email -->
+              <div class="md-form">
+                <mdb-icon far icon="credit-card" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="phoneNumberq" formControlName="phoneNumber" class="form-control" mdbInput>
+                <label for="phoneNumber" class="font-weight-light">Card number</label>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="md-form">
+                <input type="text" id="expDate" formControlName="scode" class="form-control" mdbInput >
+                <label for="expDate">Expiration Date</label>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="md-form input-group">
+                <input type="text" id="scodeq" formControlName="scode" class="form-control" mdbInput style="margin-bottom:-0.4rem !important">
+                <label for="scode">Security Code</label>
+                <div class="input-group-append">
+                  <ng-template #popTemplate>Your Security code is a 3-digit number on the back of your card <mdb-icon fas icon="credit-card"></mdb-icon> <div [innerHtml]="html"></div></ng-template>
+                  <span class="input-group-text md-addon"><a color="link"  [mdbTooltip]="popTemplate" placement="right"><mdb-icon far icon="question-circle" class="text-black-50"></mdb-icon></a></span>
+                </div>
+              </div>
+            </div>
+            <span class="border-bottom"></span>
+            <div class="mt-3" style="color: #333!important;font-weight:600 !important;font-size:0.9rem;"><span>Billing Information</span></div>
+            <div class="col-md-12 col-xs-12">
+              <!-- Material input Email -->
+              <div class="md-form">
+                <mdb-icon fas icon="map-marker" class="prefix grey-text"></mdb-icon>
+                <input type="text" id="addressq" formControlName="baddress" class="form-control" mdbInput>
+                <label for="address" class="font-weight-light">Billing Address</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="md-form">
+               <mdb-select [filterEnabled]="true" [options]="country" placeholder="" filterPlaceholder="select city" 	[notFoundMsg]="'City not found'"></mdb-select>
+               <label for="country">Country</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="md-form">
+               <input type="text" id="city" formControlName="city" class="form-control" mdbInput>
+               <label for="city">City</label>
+              </div>
+            </div>
+            <div class="col-md-8 col-xs-12">
+              <div class="md-form">
+              <input type="text" id="state" formControlName="state" class="form-control" mdbInput>
+               <label for="state">State</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="md-form">
+                <input type="text" id="zipcodeq" formControlName="zipcode" class="form-control" mdbInput>
+                <label for="zipcode" class="font-weight-light">Zip Code</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="mt-4" ><a class="btn btn-green1 btn-block" routerLink="/Estimates" mdbWavesEffect>Continue</a></div>
+              <div class="mt-3"><button routerLink="/CompanyRegistration" type="submit" class="btn  btn-outline-gray btn-block">Back to Register Company</button></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Message Account Created Toast  -->
+  <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <p class="heading lead">Account Created</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+            <p>Account Successfully Created.Your account has been created. Please click you can verify information has been emailed to example@gmail.com and follow instructions  to verify your account.</p>
+          </div>
+        </div>
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" mdbBtn outline="true" class="waves-effect btn btn-green1" mdbWavesEffect (click)="frame.hide()">No, thanks</a>
+          <a type="button" mdbBtn class="waves-effect btn btn-grey1" mdbWavesEffect>Get it now
+            <i class="far fa-gem ml-1"></i>
+          </a>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<div  class="bg-body">
+  <div class="container">
+    <div class="row justify-content-center align-items-center px-2">
+      <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5  form-container login-container">
+        <div class="logo text-center">
+           <a href="#"><img src="../assets/cube-logo.png" alt="CUBE-logo" width="30%"></a>
+         </div>
+        <!-- Recover password -->
+        <div  class="mt-4">
+          <div style="color: #333!important;font-weight:700;font-family: 'Lato', sans-serif;"><h4>Forgot Password</h4></div>
+          <h6 class="mb-3" style="color:#838b93;font-family: 'Lato', sans-serif;">We will send you instruccions on how to reset password by email</h6>
+        </div>
+        <form class="form-container1" [formGroup]="cardForm">
+          <div class="form-row">
+            <div class="col-md-12 col-xs-12">
+              <!-- Material input text -->
+              <div class="md-form">
+                <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+                <!-- <mdb-icon fas icon="email" class="prefix grey-text"></mdb-icon> -->
+                <input type="text" id="materialFormCardNameEx" formControlName="materialFormCardNameEx" class="form-control" mdbInput>
+                <label for="materialFormCardNameEx" class="font-weight-light">Email</label>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="mt-4" ><button type="submit" (click)="showSuccess()" class="btn  btn-green1 btn-block">Reset Password</button></div>
+              <div class="mt-3"><a routerLink="/login"  class="btn btn-outline-gray btn-block" role="button" aria-pressed="true">Come Back Login</a></div>
+            </div>
+          </div>
+        </form>
+        <!-- end recorver password -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Message forgot password -->
+<div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Account Created</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Please check you email</p>
+        </div>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" mdbBtn outline="true" class="waves-effect btn btn-green1" mdbWavesEffect (click)="frame.hide()">No, thanks</a>
+        <a type="button" mdbBtn class="waves-effect btn btn-grey1" mdbWavesEffect>Get it now
+          <i class="far fa-gem ml-1"></i>
+        </a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

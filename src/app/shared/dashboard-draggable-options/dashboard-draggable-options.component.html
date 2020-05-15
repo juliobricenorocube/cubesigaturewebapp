@@ -1,0 +1,71 @@
+<!-- <div class="btn-group " mdbDropdown >
+  <button mdbDropdownToggle style="color:#656769 !important;" mdbTooltip="Settings" placement="top" type="button" size="sm" mdbBtn color="link"
+    class="dropdown-toggle waves-light" mdbWavesEffect>
+    <mdb-icon fas icon="filter"></mdb-icon> <span class="caret"></span>
+  </button>
+  <div class="dropdown-menu dropdown-primary pl-2 pr-2" style="min-width:12rem !important;">
+    <span style="font-size:1rem;color:#949EB0;display:inline">Info to Display</span>
+    <div class="mt-2">
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Number</mdb-checkbox>
+      <mdb-checkbox [checked]="true" style="color:#757575 !important;font-size:0.9rem;" [default]="true">Name</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;" [checked]="true">Status</mdb-checkbox>
+      <mdb-checkbox  [default]="true" style="color:#757575 !important;font-size:0.9rem;">Category</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Follow Up Date</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Created On</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Bid Date</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;" [checked]="true">Bid Status</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Lead Status</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Follow Up Status</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Rating</mdb-checkbox>
+      <hr >
+      <div style="margin-top:-1rem;margin-bottom:-0.5rem ">
+        <button type="button" mdbBtn color="link" class="waves-light btn-md" aria-label="Close"  mdbWavesEffect>Cancel</button>
+        <button type="button" mdbBtn class="btn btn-green1 btn-sm"  mdbWavesEffect>Save</button>
+      </div>
+    </div>
+
+  </div>
+</div> -->
+
+<!-- <div class="btn-group " mdbDropdown >
+  <button mdbDropdownToggle style="color:#656769 !important;" mdbTooltip="Settings" placement="top" type="button" size="sm" mdbBtn color="link"
+    class="dropdown-toggle waves-light" mdbWavesEffect>
+    <mdb-icon fas icon="filter"></mdb-icon> <span class="caret"></span>
+  </button>
+  <div class="dropdown-menu dropdown-primary pl-2 pr-2" style="min-width:12rem !important;">
+    <span style="font-size:1rem;color:#949EB0;display:inline">Info to Display</span>
+    <div class="mt-2">
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Number</mdb-checkbox>
+      <mdb-checkbox [checked]="true" style="color:#757575 !important;font-size:0.9rem;" [default]="true">Name</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;" [checked]="true">Status</mdb-checkbox>
+      <mdb-checkbox  [default]="true" style="color:#757575 !important;font-size:0.9rem;">Category</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Follow Up Date</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Created On</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Bid Date</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;" [checked]="true">Bid Status</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Lead Status</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Follow Up Status</mdb-checkbox>
+      <mdb-checkbox [default]="true" style="color:#757575 !important;font-size:0.9rem;">Rating</mdb-checkbox>
+      <hr >
+      <div style="margin-top:-1rem;margin-bottom:-0.5rem ">
+        <button type="button" mdbBtn color="link" class="waves-light btn-md" aria-label="Close"  mdbWavesEffect>Cancel</button>
+        <button type="button" mdbBtn class="btn btn-green1 btn-sm"  mdbWavesEffect>Save</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button type="button"  mdbTooltip="Export to Excel" placement="top" size="sm" mdbBtn color="link" class="close-component" style="color:#656769 !important"><mdb-icon far icon="file-excel"></mdb-icon></button>
+<button type="button"  mdbTooltip="Export to PDF" placement="top"  size="sm" mdbBtn color="link" class="close-component" style="color:#656769 !important"><mdb-icon far icon="file-pdf"></mdb-icon></button> -->
+<div class="btn-group " mdbDropdown >
+  <button mdbDropdownToggle style="color:#656769 !important;text-decoration:none" mdbTooltip="Settings" placement="top" type="button" size="sm" mdbBtn color="link"
+    class="dropdown-toggle waves-light" mdbWavesEffect>
+    Size
+  </button>
+  <div class="dropdown-menu dropdown-primary">
+    <a mdbBtn  style="color:#656769 !important" color="link" class="dropdown-item" *ngFor="let item of items" [ngClass]="{' btn-green1': item == sizeSelected}" (click)="sizeChange(item)">Size {{item}}</a>
+  </div>
+</div>
+
+<button (click)="remove()" type="button" size="sm" mdbTooltip="Close" placement="top"  mdbBtn color="link" class="close-component" style="color:#656769 !important"><mdb-icon fas icon="times"></mdb-icon></button>
