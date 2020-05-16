@@ -9,10 +9,10 @@ import { ServiceWorkOrderComponent } from './pages/service-work-order/service-wo
 import { ServiceWorkOrderSignatureComponent } from './pages/service-work-order-signature/service-work-order-signature.component';
 
 const APP_ROUTES: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'NewAccount', component: LoginNewAccountComponent },
-  { path: 'RecoverPassword', component: LoginRecoverPasswdComponent },
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'NewAccount', component: LoginNewAccountComponent },
+  // { path: 'RecoverPassword', component: LoginRecoverPasswdComponent },
 
   { path: 'serviceWorkOrder', component: ServiceWorkOrderComponent },
   { path: 'SWOsignature/:code', component: ServiceWorkOrderSignatureComponent }
