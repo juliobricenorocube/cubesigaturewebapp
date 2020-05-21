@@ -14,7 +14,9 @@ export class UserService {
 
   private uri = `${environment.apiUrl}`;
 
-  constructor(private http: HttpClient, private appConfigService: AppConfigService) { }
+  constructor(private http: HttpClient, private appConfigService: AppConfigService) {
+    this.uri = this.appConfigService.apiBaseUrl;
+  }
 
   login(loginUser: LoginUser) {
     this.uri = this.appConfigService.apiBaseUrl;

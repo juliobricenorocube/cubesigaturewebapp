@@ -13,7 +13,7 @@ const APP_ROUTES: Routes = [
   // { path: 'login', component: LoginComponent },
   // { path: 'NewAccount', component: LoginNewAccountComponent },
   // { path: 'RecoverPassword', component: LoginRecoverPasswdComponent },
-
+  { path: '', redirectTo: 'serviceWorkOrder', pathMatch: 'full' },
   { path: 'serviceWorkOrder', component: ServiceWorkOrderComponent },
   { path: 'SWOsignature/:code', component: ServiceWorkOrderSignatureComponent }
   // { path: 'editProject', component: EditProjectComponent },
