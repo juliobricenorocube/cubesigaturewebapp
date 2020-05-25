@@ -15,7 +15,7 @@ const APP_ROUTES: Routes = [
   // { path: 'RecoverPassword', component: LoginRecoverPasswdComponent },
   { path: '', redirectTo: 'serviceWorkOrder', pathMatch: 'full' },
   { path: 'serviceWorkOrder', component: ServiceWorkOrderComponent },
-  { path: 'SWOsignature/:code', component: ServiceWorkOrderSignatureComponent }
+  { path: 'SWOsignature/:code/:id', component: ServiceWorkOrderSignatureComponent }
   // { path: 'editProject', component: EditProjectComponent },
 
 

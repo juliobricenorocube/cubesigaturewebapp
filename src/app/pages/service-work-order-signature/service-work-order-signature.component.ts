@@ -29,6 +29,7 @@ export class ServiceWorkOrderSignatureComponent implements OnInit, AfterViewInit
     ValidationCode: '',
     EndDate: ''
   };
+  workNumber = '0';
   signature: any = [0];
   approvedBy: any;
   signatureDetails: any;
@@ -40,7 +41,8 @@ export class ServiceWorkOrderSignatureComponent implements OnInit, AfterViewInit
     private router: Router
   ) {
     const month = (this.today.getMonth() + 1).toString();
-    this.model.EndDate = this.today.getFullYear() + '-' + (month.length > 1 ? month : '0' + month) + '-' + this.today.getDate()
+    this.model.EndDate = this.today.getFullYear() + '-' + (month.length > 1 ? month : '0' + month) + '-' + this.today.getDate();
+    this.workNumber = this.activatedroute.snapshot.paramMap.get('id');
   }
 
   ngOnInit() {

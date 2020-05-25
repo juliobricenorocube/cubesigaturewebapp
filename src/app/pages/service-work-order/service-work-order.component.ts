@@ -22,9 +22,11 @@ export class ServiceWorkOrderComponent implements OnInit {
   validateCode() {
     this.userService.validationCode(this.code).subscribe(res => {
       if (res.identity > 0) {
-        this.router.navigateByUrl('/SWOsignature/' + this.code);
+        this.router.navigateByUrl('/SWOsignature/' + this.code + '/' + res.identity);
+      } else {
+        this.toast.error('Service Work Order not found');
       }
-    }, err => this.toast.error('Service Work Order not found'));
+    }, err => this.toast.error('Error has ocurred in server'));
   }
 
 }
